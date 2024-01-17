@@ -4,6 +4,8 @@ const cors = require(`cors`);
 const { foodHut, connectToDatabase } = require("./mongodb");
 const port = process.env.PORT || 7000;
 const userRoutes = require("./user");
+const TodaysOfferRoutes = require("./TodaysOffer");
+const Cart = require("./Cart");
 // middleware
 app.use(cors());
 app.use(express.json());
@@ -19,4 +21,6 @@ app.listen(port, () => {
 });
 
 app.use(userRoutes);
+app.use(TodaysOfferRoutes);
+app.use(Cart);
 module.exports = { app, port, express, cors };
