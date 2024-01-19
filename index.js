@@ -5,6 +5,8 @@ const { foodHut, connectToDatabase } = require("./mongodb");
 const port = process.env.PORT || 7000;
 const userRoutes = require("./user");
 const TodaysOfferRoutes = require("./TodaysOffer");
+const Foods = require("./Foods");
+
 const Cart = require("./Cart");
 // middleware
 app.use(cors());
@@ -23,4 +25,5 @@ app.listen(port, () => {
 app.use(userRoutes);
 app.use(TodaysOfferRoutes);
 app.use(Cart);
+app.use(Foods);
 module.exports = { app, port, express, cors };
