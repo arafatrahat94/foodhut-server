@@ -8,6 +8,8 @@ const TodaysOfferRoutes = require("./TodaysOffer");
 const Foods = require("./Foods");
 
 const Cart = require("./Cart");
+const PopularRoute = require("./Popular");
+
 // middleware
 app.use(cors());
 app.use(express.json());
@@ -26,4 +28,5 @@ app.use(userRoutes);
 app.use(TodaysOfferRoutes);
 app.use(Cart);
 app.use(Foods);
+app.use(PopularRoute);
 module.exports = { app, port, express, cors };
